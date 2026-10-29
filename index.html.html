@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ExamPrep — Banking & SSC Practice</title>
+<style>
+:root{--navy:#14213d;--blue:#2457c5;--teal:#0d9488;--ink:#172033;--muted:#667085;--bg:#f4f7fb;--line:#e5eaf2;--white:#fff;--red:#c2413b;--amber:#a16207}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,select{font:inherit}button{cursor:pointer}.app{max-width:1200px;margin:auto;padding:22px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}.brand{display:flex;align-items:center;gap:12px}.logo{width:44px;height:44px;display:grid;place-items:center;background:var(--navy);color:white;border-radius:13px;font-weight:800;font-size:18px}.brand h1{font-size:20px;margin:0;letter-spacing:-.4px}.brand p{margin:2px 0 0;color:var(--muted);font-size:12px}.pill{padding:7px 11px;border-radius:999px;background:#e8f7f4;color:#08786f;font-size:12px;font-weight:700}.hero{background:linear-gradient(120deg,#14213d,#234a87);color:white;padding:27px;border-radius:20px;display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:20px}.hero h2{font-size:clamp(23px,3vw,32px);line-height:1.15;margin:0 0 10px;letter-spacing:-.8px}.hero p{margin:0;color:#dce7fb;max-width:620px}.hero-mark{font-size:48px;opacity:.9;padding:8px 18px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:25px 0 12px}.section-head h2{font-size:18px;margin:0}.section-head p{margin:3px 0 0;color:var(--muted);font-size:13px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat,.panel,.subject,.feature,.result-card{background:var(--white);border:1px solid var(--line);border-radius:15px;padding:17px}.stat .label{font-size:12px;color:var(--muted)}.stat .num{font-size:27px;font-weight:800;letter-spacing:-.7px;margin:4px 0}.stat .hint{font-size:12px;color:var(--muted)}.subjects{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.subject{padding:16px;transition:.15s}.subject:hover{border-color:#9db6ed;transform:translateY(-2px)}.subicon{width:39px;height:39px;border-radius:12px;display:grid;place-items:center;font-size:20px;margin-bottom:13px;background:#eaf0ff}.subject:nth-child(2) .subicon{background:#f0eaff}.subject:nth-child(3) .subicon{background:#e1f7f2}.subject:nth-child(4) .subicon{background:#fff1d8}.subject h3{font-size:15px;margin:0 0 5px}.subject p{font-size:12px;color:var(--muted);margin:0 0 13px;min-height:36px}.small-btn,.primary,.secondary{border:0;border-radius:10px;padding:10px 13px;font-weight:700;font-size:13px}.small-btn{background:#edf2ff;color:var(--blue);width:100%}.primary{background:var(--blue);color:#fff}.secondary{background:#edf1f7;color:var(--ink)}.feature-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:12px}.feature h3{margin:0 0 5px;font-size:16px}.feature p{margin:0 0 14px;color:var(--muted);font-size:13px}.feature-row{display:flex;gap:10px;flex-wrap:wrap}.select{padding:10px;border:1px solid var(--line);border-radius:10px;background:white;color:var(--ink)}.history-list{display:grid;gap:8px}.history-item{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px}.history-item:last-child{border-bottom:0}.muted{color:var(--muted)}.empty{padding:22px;text-align:center;color:var(--muted);font-size:13px}.footer{text-align:center;color:var(--muted);font-size:12px;padding:25px 0 5px}
+.admin-note{background:#fff7e6;border:1px solid #f0d28d;color:#805b10;padding:11px 13px;border-radius:10px;font-size:12px;margin:14px 0}
+.admin-form{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.admin-form label{display:grid;gap:5px;font-size:12px;font-weight:700;color:#465168}
+.admin-form input,.admin-form textarea,.admin-form select{width:100%;border:1px solid var(--line);border-radius:9px;padding:10px;font:inherit;color:var(--ink);background:white}
+.admin-form textarea{min-height:74px;resize:vertical}
+.admin-form .full{grid-column:1/-1}
+.admin-question{display:flex;justify-content:space-between;gap:12px;align-items:start;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px}
+.admin-question:last-child{border-bottom:0}
+@media(max-width:600px){.admin-form{grid-template-columns:1fr}.admin-form .full{grid-column:auto}}.hidden{display:none!important}
+.modal-backdrop{position:fixed;inset:0;background:#101828a8;z-index:10;display:flex;align-items:center;justify-content:center;padding:14px}.modal{background:white;border-radius:18px;width:min(760px,100%);max-height:94vh;overflow:auto;padding:23px;box-shadow:0 20px 70px #0003}.modal-head{display:flex;justify-content:space-between;gap:15px;align-items:start;border-bottom:1px solid var(--line);padding-bottom:15px}.modal-head h2{margin:0;font-size:21px}.modal-head p{margin:4px 0 0;color:var(--muted);font-size:13px}.close{border:0;background:#eef2f7;border-radius:9px;width:35px;height:35px;font-size:20px}.quiz-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:16px 0}.timer{font-weight:800;color:var(--blue);background:#edf2ff;padding:8px 12px;border-radius:10px;font-variant-numeric:tabular-nums}.progress-track{height:6px;background:#e8edf5;border-radius:99px;overflow:hidden;margin-bottom:18px}.progress-fill{height:100%;background:var(--teal);width:0;transition:width .2s}.qtext{font-size:18px;font-weight:750;margin:16px 0}.options{display:grid;gap:9px}.option{display:flex;align-items:center;gap:11px;text-align:left;background:white;border:1px solid var(--line);padding:12px;border-radius:11px;color:var(--ink)}.option:hover{border-color:#9cb6ed}.option.selected{border-color:var(--blue);background:#f0f4ff}.option .letter{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:#f0f3f8;font-size:12px;font-weight:800;flex-shrink:0}.option.selected .letter{background:var(--blue);color:white}.qbottom{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:18px;flex-wrap:wrap}.qbottom .left,.qbottom .right{display:flex;gap:8px}.palette{display:flex;gap:6px;flex-wrap:wrap;margin-top:17px}.dot{width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:white;font-size:12px}.dot.answered{background:#dff5ee;border-color:#9bd9c9}.dot.current{outline:2px solid var(--blue)}.dot.review{background:#fff0ce;border-color:#f0d28d}.result-score{font-size:40px;font-weight:850;letter-spacing:-1px}.result-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:16px 0}.result-mini{background:#f6f8fc;padding:12px;border-radius:11px}.result-mini strong{display:block;font-size:20px}.result-mini span{font-size:11px;color:var(--muted)}.review-list{display:grid;gap:12px;margin-top:16px}.review-q{border:1px solid var(--line);padding:13px;border-radius:12px}.review-q h4{margin:0 0 8px;font-size:14px}.correct{color:#08786f;font-weight:700}.wrong{color:var(--red);font-weight:700}.explain{background:#f6f8fc;padding:10px;border-radius:9px;margin-top:8px;font-size:13px;color:#465168}
+@media(max-width:760px){.app{padding:14px}.hero{padding:21px}.hero-mark{display:none}.stats{grid-template-columns:repeat(2,1fr)}.subjects{grid-template-columns:repeat(2,1fr)}.feature-grid{grid-template-columns:1fr}.result-grid{grid-template-columns:repeat(2,1fr)}.modal{padding:16px}.qtext{font-size:16px}.topbar{align-items:flex-start}.pill{white-space:nowrap}}
+@media(max-width:380px){.subjects{grid-template-columns:1fr}.subject p{min-height:0}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <div class="brand"><div class="logo">EP</div><div><h1>ExamPrep</h1><p>Banking-first exam practice</p></div></div>
+  <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><button class="secondary" onclick="openAdmin()">⚙ Admin tools</button><div class="pill">● Free practice mode</div></div>
+</header>
+<section class="hero">
+  <div><h2>Practise smart.<br>Get faster with every test.</h2><p>Build speed, protect accuracy, and learn when to solve, skip, or return. Start with a short drill today.</p></div>
+  <div class="hero-mark">◷</div>
+</section>
+<section class="stats">
+  <div class="stat"><div class="label">Questions attempted</div><div class="num" id="totalAttempted">0</div><div class="hint">Across saved practice sessions</div></div>
+  <div class="stat"><div class="label">Overall accuracy</div><div class="num" id="overallAccuracy">—</div><div class="hint">Correct ÷ attempted</div></div>
+  <div class="stat"><div class="label">Tests completed</div><div class="num" id="testsCompleted">0</div><div class="hint">Your practice history</div></div>
+  <div class="stat"><div class="label">Daily practice</div><div class="num" id="dailyProgress">0/20</div><div class="hint">Questions attempted today</div></div>
+</section>
+<div class="section-head"><div><h2>Choose a subject</h2><p>Start with a short set and focus on clean, confident answers.</p></div></div>
+<section class="subjects">
+  <article class="subject"><div class="subicon">➗</div><h3>Quantitative Aptitude</h3><p>Calculation speed, arithmetic, series and data interpretation.</p><button class="small-btn" onclick="startQuiz('Quantitative Aptitude','practice')">Practise now →</button></article>
+  <article class="subject"><div class="subicon">🧩</div><h3>Reasoning Ability</h3><p>Logic, syllogisms, directions and banking-style reasoning.</p><button class="small-btn" onclick="startQuiz('Reasoning Ability','practice')">Practise now →</button></article>
+  <article class="subject"><div class="subicon">📘</div><h3>English Language</h3><p>Grammar, vocabulary and sentence correction.</p><button class="small-btn" onclick="startQuiz('English Language','practice')">Practise now →</button></article>
+  <article class="subject"><div class="subicon">📰</div><h3>General Awareness</h3><p>Static general knowledge and banking fundamentals.</p><button class="small-btn" onclick="startQuiz('General Awareness','practice')">Practise now →</button></article>
+</section>
+<div class="section-head"><div><h2>Train for exam pressure</h2><p>Time management is a skill. Practise it deliberately.</p></div></div>
+<section class="feature-grid">
+  <article class="feature"><h3>⚡ Speed drill</h3><p>Short timed practice to improve recognition and pace without sacrificing accuracy.</p><div class="feature-row"><select class="select" id="drillSubject" aria-label="Speed drill subject"><option>Quantitative Aptitude</option><option>Reasoning Ability</option><option>English Language</option><option>General Awareness</option></select><select class="select" id="drillMinutes" aria-label="Speed drill duration"><option value="5">5 minutes</option><option value="10">10 minutes</option></select><button class="primary" onclick="startDrill()">Start drill</button></div></article>
+  <article class="feature"><h3>📝 Mixed mini mock</h3><p>A mixed practice set with a timer, question navigation, review markers and score analysis.</p><div class="feature-row"><button class="primary" onclick="startQuiz('Mixed Banking Mini Mock','mock')">Start mini mock</button><button class="secondary" onclick="clearHistory()">Reset history</button></div></article>
+</section>
+<div class="section-head"><div><h2>Recent practice</h2><p>Your results are saved on this browser only.</p></div></div>
+<section class="panel"><div id="history" class="history-list"><div class="empty">No tests yet. Complete your first drill and your results will appear here.</div></div></section>
+<div class="footer">ExamPrep MVP · Practice questions are illustrative, not official previous-year questions.</div>
+</div>
+
+<div id="quizBackdrop" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="quizTitle">
+ <div class="modal">
+  <div class="modal-head"><div><h2 id="quizTitle">Practice test</h2><p id="quizSubtitle">Choose answers and keep an eye on the clock.</p></div><button class="close" onclick="closeQuiz()" aria-label="Close test">×</button></div>
+  <div class="quiz-meta"><span id="qCounter">Question 1 of 10</span><span id="timer" class="timer">05:00</span></div>
+  <div class="progress-track"><div class="progress-fill" id="quizProgress"></div></div>
+  <div id="questionArea"></div>
+  <div class="qbottom"><div class="left"><button class="secondary" onclick="prevQuestion()">← Previous</button><button class="secondary" onclick="toggleReview()">⚑ Mark review</button></div><div class="right"><button class="secondary" onclick="skipQuestion()">Skip</button><button class="primary" onclick="nextQuestion()">Next →</button><button class="primary hidden" id="submitBtn" onclick="confirmSubmit()">Submit test</button></div></div>
+  <div id="palette" class="palette" aria-label="Question navigation"></div>
+ </div>
+</div>
+<div id="resultBackdrop" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
+ <div class="modal"><div class="modal-head"><div><h2 id="resultTitle">Your results</h2><p id="resultSubtitle">Review your performance.</p></div><button class="close" onclick="closeResults()" aria-label="Close results">×</button></div><div id="resultContent"></div><div class="qbottom"><button class="secondary" onclick="closeResults()">Back to dashboard</button><button class="primary" onclick="startQuiz('Mixed Banking Mini Mock','mock')">Try another test</button></div></div>
+</div>
+
+<div id="adminBackdrop" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="adminTitle">
+ <div class="modal">
+  <div class="modal-head"><div><h2 id="adminTitle">Local admin tools</h2><p>Manage your prototype question bank on this browser.</p></div><button class="close" onclick="closeAdmin()" aria-label="Close admin tools">×</button></div>
+  <div class="admin-note"><strong>Important:</strong> this is a local prototype admin panel, not a secure public admin portal. Changes are saved only in this browser on this device. Do not publish this as a real admin system or enter student/private data here. We'll add secure sign-in and a shared database before public admin use.</div>
+  <h3 style="margin:18px 0 5px;font-size:16px">Add a practice question</h3>
+  <form id="adminForm" class="admin-form" onsubmit="saveAdminQuestion(event)">
+   <label>Subject<select id="adminSubject"><option>Quantitative Aptitude</option><option>Reasoning Ability</option><option>English Language</option><option>General Awareness</option></select></label>
+   <label>Correct option<select id="adminCorrect"><option value="0">A</option><option value="1">B</option><option value="2">C</option><option value="3">D</option></select></label>
+   <label class="full">Question<textarea id="adminQuestion" required placeholder="Write the question"></textarea></label>
+   <label>Option A<input id="adminA" required></label><label>Option B<input id="adminB" required></label>
+   <label>Option C<input id="adminC" required></label><label>Option D<input id="adminD" required></label>
+   <label class="full">Explanation<textarea id="adminExplanation" required placeholder="Explain why the answer is correct"></textarea></label>
+   <div class="full"><button class="primary" type="submit">Save question</button> <button class="secondary" type="button" onclick="resetAdminForm()">Clear form</button></div>
+  </form>
+  <div class="section-head"><div><h2>Current question bank</h2><p id="adminQuestionCount">Loading questions…</p></div></div>
+  <div id="adminQuestionList" class="history-list"></div>
+  <div class="qbottom"><button class="secondary" onclick="exportQuestions()">Export added questions (JSON)</button><button class="primary" onclick="closeAdmin()">Done</button></div>
+ </div>
+</div>
+
+<script>
+const BANK = {
+"Quantitative Aptitude":[
+{q:"What is 25% of 360?",o:["80","90","95","100"],a:1,e:"25% is one-fourth. 360 ÷ 4 = 90."},
+{q:"Simplify: 48 ÷ 6 × 3 + 5",o:["13","24","29","29.5"],a:2,e:"Division and multiplication are evaluated left to right: 48 ÷ 6 = 8; 8 × 3 = 24; 24 + 5 = 29."},
+{q:"A sum of ₹800 becomes ₹920 in 2 years at simple interest. What is the annual rate?",o:["6%","7.5%","8%","9%"],a:1,e:"Interest = ₹120. Rate = (120 × 100) ÷ (800 × 2) = 7.5%."},
+{q:"The average of 12, 18, 20 and 30 is:",o:["18","19","20","21"],a:2,e:"Sum = 80. Average = 80 ÷ 4 = 20."},
+{q:"A number increases from 200 to 250. What is the percentage increase?",o:["20%","25%","30%","50%"],a:1,e:"Increase = 50. Percentage increase = (50 ÷ 200) × 100 = 25%."},
+{q:"Find the next number: 3, 6, 12, 24, __",o:["36","42","48","54"],a:2,e:"Each term is multiplied by 2. The next term is 24 × 2 = 48."},
+{q:"If 5 pens cost ₹60, what is the cost of 8 pens at the same rate?",o:["₹84","₹90","₹96","₹100"],a:2,e:"One pen costs ₹12, so 8 pens cost 8 × 12 = ₹96."},
+{q:"A train covers 180 km in 3 hours. Its average speed is:",o:["50 km/h","55 km/h","60 km/h","65 km/h"],a:2,e:"Speed = distance ÷ time = 180 ÷ 3 = 60 km/h."},
+{q:"What is 3/5 of 250?",o:["100","125","150","175"],a:2,e:"250 × 3/5 = 50 × 3 = 150."},
+{q:"If x + 15 = 42, then x equals:",o:["17","27","37","57"],a:1,e:"Subtract 15 from both sides: x = 42 − 15 = 27."}
+],
+"Reasoning Ability":[
+{q:"Find the next letter: A, C, F, J, O, __",o:["S","T","U","V"],a:2,e:"Letter jumps are +2, +3, +4, +5; next is +6. O + 6 = U."},
+{q:"If BANK is coded as C B O L (each letter shifted forward by one), how is LOAN coded?",o:["MPBO","KNZM","MPCO","LPBO"],a:0,e:"Move each letter one step forward: L→M, O→P, A→B, N→O, giving MPBO."},
+{q:"Ravi faces north. He turns right, then right again. Which direction is he facing?",o:["East","West","South","North"],a:2,e:"North → right is east → right again is south."},
+{q:"Choose the odd one out.",o:["Square","Triangle","Circle","Cube"],a:3,e:"Cube is a three-dimensional solid; the others are two-dimensional shapes."},
+{q:"All roses are flowers. Some flowers fade quickly. Which conclusion definitely follows?",o:["All roses fade quickly","Some roses fade quickly","All flowers are roses","All roses are flowers"],a:3,e:"Only the statement that all roses are flowers is guaranteed by the premise."},
+{q:"If today is Wednesday, what day will it be 10 days later?",o:["Friday","Saturday","Sunday","Monday"],a:1,e:"Ten days is 7 + 3 days. Wednesday plus 3 days is Saturday."},
+{q:"Arrange from smallest to largest: 0.5, 1/4, 0.75, 2/3.",o:["1/4, 0.5, 2/3, 0.75","0.5, 1/4, 0.75, 2/3","1/4, 2/3, 0.5, 0.75","0.75, 2/3, 0.5, 1/4"],a:0,e:"As decimals: 1/4 = .25, .5 = .5, 2/3 ≈ .667, .75 = .75."},
+{q:"P is taller than Q. Q is taller than R. Who is the shortest?",o:["P","Q","R","Cannot say"],a:2,e:"P > Q > R, so R is the shortest."},
+{q:"Find the missing number: 2, 5, 10, 17, 26, __",o:["35","36","37","38"],a:2,e:"Differences are +3, +5, +7, +9; next is +11. 26 + 11 = 37."},
+{q:"A is the brother of B. B is the sister of C. How is A related to C?",o:["Brother","Sister","Father","Cannot determine"],a:0,e:"A is stated to be male and is B's sibling; B and C are siblings, so A is C's brother."}
+],
+"English Language":[
+{q:"Choose the grammatically correct sentence.",o:["She go to work daily.","She goes to work daily.","She going to work daily.","She gone to work daily."],a:1,e:"With third-person singular 'she' in the simple present, use 'goes'."},
+{q:"Choose the synonym of 'Prudent'.",o:["Careless","Wise","Hasty","Noisy"],a:1,e:"Prudent means acting with care and good judgment; 'wise' is the closest option."},
+{q:"Fill in the blank: Neither of the answers ___ correct.",o:["are","were","is","have"],a:2,e:"'Neither' is treated as singular in this construction, so 'is' is correct."},
+{q:"Choose the antonym of 'Expand'.",o:["Enlarge","Extend","Contract","Increase"],a:2,e:"Contract means to become smaller, the opposite of expand."},
+{q:"Choose the correctly spelt word.",o:["Accomodate","Acommodate","Accommodate","Acomoddate"],a:2,e:"The correct spelling is accommodate, with double c and double m."},
+{q:"Identify the error: 'He has been working here since five years.'",o:["He has been","working here","since five years","No error"],a:2,e:"Use 'for five years' for a duration; 'since' is used with a starting point."},
+{q:"Choose the best connector: It was raining, ___ we continued playing.",o:["because","yet","unless","therefore"],a:1,e:"'Yet' expresses contrast between the rain and continuing to play."},
+{q:"Choose the plural of 'criterion'.",o:["Criterions","Criteria","Criterias","Criterion"],a:1,e:"The plural of criterion is criteria."},
+{q:"Choose the correct article: She is ___ honest officer.",o:["a","an","the","no article"],a:1,e:"'Honest' begins with a vowel sound because h is silent, so use 'an'."},
+{q:"Choose the meaning of 'once in a blue moon'.",o:["Every day","Very rarely","At night","Unexpectedly"],a:1,e:"The idiom means something that happens very rarely."}
+],
+"General Awareness":[
+{q:"Which institution is India's central bank?",o:["SEBI","NABARD","Reserve Bank of India","SBI"],a:2,e:"The Reserve Bank of India (RBI) is India's central bank."},
+{q:"What does ATM commonly stand for?",o:["Automated Teller Machine","Automatic Transfer Method","Account Tracking Machine","Any Time Money"],a:0,e:"ATM stands for Automated Teller Machine."},
+{q:"Which body regulates India's securities market?",o:["RBI","SEBI","IRDAI","PFRDA"],a:1,e:"SEBI regulates the securities market in India."},
+{q:"What is the full form of KYC in banking?",o:["Keep Your Cash","Know Your Customer","Know Your Credit","Key Yield Certificate"],a:1,e:"KYC stands for Know Your Customer."},
+{q:"Which of these is generally a liability for a commercial bank?",o:["Loan given to a customer","Cash in hand","Customer deposit","Investment held"],a:2,e:"Customer deposits are amounts the bank owes to depositors, so they are liabilities."},
+{q:"Which organisation operates India's UPI payment system?",o:["NPCI","NITI Aayog","SEBI","NSE"],a:0,e:"The National Payments Corporation of India (NPCI) operates UPI."},
+{q:"What does GDP measure?",o:["Only exports","Value of final goods and services produced within a country","Government tax only","Total bank deposits"],a:1,e:"GDP measures the value of final goods and services produced within a country's borders over a period."},
+{q:"Which deposit usually has a fixed maturity period?",o:["Savings deposit","Current deposit","Fixed deposit","Cash in hand"],a:2,e:"A fixed deposit is placed for an agreed term, subject to its terms and conditions."},
+{q:"Which institution is primarily associated with rural and agricultural development finance?",o:["NABARD","SEBI","SIDBI only","IRDAI"],a:0,e:"NABARD is a key development finance institution for agriculture and rural development."},
+{q:"What is the currency of Japan?",o:["Won","Yuan","Yen","Ringgit"],a:2,e:"Japan's currency is the yen."}
+]
+};
+// Locally added questions are stored on this browser only.
+function loadLocalQuestions(){
+ try{
+  const saved=JSON.parse(localStorage.getItem('examprep_custom_questions')||'[]');
+  saved.forEach((item,i)=>{if(BANK[item.subject] && item.q && Array.isArray(item.o) && item.o.length===4){BANK[item.subject].push({...item,_localId:i})}});
+ }catch(e){}
+}
+loadLocalQuestions();
+const mixedNames=Object.keys(BANK);
+let state=null, tick=null, startedAt=0, elapsedBefore=0;
+function shuffle(arr){let a=arr.slice();for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function getHistory(){try{return JSON.parse(localStorage.getItem('examprep_history')||'[]')}catch(e){return []}}
+function saveHistory(h){try{localStorage.setItem('examprep_history',JSON.stringify(h.slice(0,30)))}catch(e){}}
+function updateDashboard(){
+ const h=getHistory(),attempted=h.reduce((s,x)=>s+x.attempted,0),correct=h.reduce((s,x)=>s+x.correct,0);
+ document.getElementById('totalAttempted').textContent=attempted;
+ document.getElementById('overallAccuracy').textContent=attempted?Math.round(correct/attempted*100)+'%':'—';
+ document.getElementById('testsCompleted').textContent=h.length;
+ const today=new Date().toDateString(),daily=h.filter(x=>new Date(x.date).toDateString()===today).reduce((s,x)=>s+x.attempted,0);
+ document.getElementById('dailyProgress').textContent=Math.min(daily,20)+'/20';
+ const host=document.getElementById('history');
+ if(!h.length){host.innerHTML='<div class="empty">No tests yet. Complete your first drill and your results will appear here.</div>';return}
+ host.innerHTML=h.slice(0,6).map(x=>`<div class="history-item"><div><strong>${esc(x.name)}</strong><div class="muted">${new Date(x.date).toLocaleString()} · ${x.attempted}/${x.total} attempted · ${formatTime(x.duration)}</div></div><div style="text-align:right"><strong>${x.score}/${x.total}</strong><div class="muted">${x.accuracy}% accuracy</div></div></div>`).join('');
+}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function formatTime(s){s=Math.max(0,Math.round(s));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}
+function startDrill(){const subject=document.getElementById('drillSubject').value;startQuiz(subject,'drill',Number(document.getElementById('drillMinutes').value)*60)}
+function startQuiz(name,mode='practice',limit){
+ let qs=[];
+ if(name==='Mixed Banking Mini Mock'){mixedNames.forEach(n=>qs.push(...shuffle(BANK[n]).slice(0,3)));qs=shuffle(qs).slice(0,12)}
+ else {qs=shuffle(BANK[name]||BANK['Quantitative Aptitude']).slice(0,10)}
+ const seconds=limit|| (mode==='mock'?12*60:5*60);
+ state={name,mode,qs,answers:Array(qs.length).fill(null),review:Array(qs.length).fill(false),index:0,remaining:seconds,totalSeconds:seconds,questionStarts:Array(qs.length).fill(0),times:Array(qs.length).fill(0),ended:false};
+ startedAt=Date.now();elapsedBefore=0;
+ document.getElementById('quizTitle').textContent=name;
+ document.getElementById('quizSubtitle').textContent=mode==='drill'?'Speed drill: stay accurate, and skip questions that are costing too much time.':mode==='mock'?'Mixed banking mini mock · illustrative practice questions':'Practice set · illustrative questions';
+ document.getElementById('quizBackdrop').classList.remove('hidden');
+ renderQuestion();startTimer();
+}
+function startTimer(){clearInterval(tick);tick=setInterval(()=>{if(!state||state.ended)return;state.remaining--;document.getElementById('timer').textContent=formatTime(state.remaining);if(state.remaining<=0)finishQuiz(true)},1000);document.getElementById('timer').textContent=formatTime(state.remaining)}
+function recordTime(){if(!state)return;const i=state.index;if(state.questionStarts[i]){state.times[i]+=(Date.now()-state.questionStarts[i])/1000;state.questionStarts[i]=Date.now()}}
+function renderQuestion(){
+ if(!state)return;const q=state.qs[state.index];
+ state.questionStarts[state.index]=Date.now();
+ document.getElementById('qCounter').textContent=`Question ${state.index+1} of ${state.qs.length}`;
+ document.getElementById('quizProgress').style.width=((state.index+1)/state.qs.length*100)+'%';
+ document.getElementById('questionArea').innerHTML=`<div class="qtext">${esc(q.q)}</div><div class="options">${q.o.map((o,i)=>`<button class="option ${state.answers[state.index]===i?'selected':''}" onclick="chooseAnswer(${i})"><span class="letter">${'ABCD'[i]}</span><span>${esc(o)}</span></button>`).join('')}</div>`;
+ document.getElementById('palette').innerHTML=state.qs.map((_,i)=>`<button class="dot ${state.answers[i]!==null?'answered':''} ${state.review[i]?'review':''} ${i===state.index?'current':''}" onclick="goQuestion(${i})" aria-label="Go to question ${i+1}">${i+1}</button>`).join('');
+ document.getElementById('submitBtn').classList.toggle('hidden',state.index!==state.qs.length-1);
+}
+function chooseAnswer(i){if(!state)return;recordTime();state.answers[state.index]=i;renderQuestion()}
+function goQuestion(i){if(!state)return;recordTime();state.index=i;renderQuestion()}
+function nextQuestion(){if(!state)return;if(state.index<state.qs.length-1){recordTime();state.index++;renderQuestion()}else confirmSubmit()}
+function prevQuestion(){if(!state)return;if(state.index>0){recordTime();state.index--;renderQuestion()}}
+function skipQuestion(){if(!state)return;recordTime();if(state.index<state.qs.length-1){state.index++;renderQuestion()}else confirmSubmit()}
+function toggleReview(){if(!state)return;state.review[state.index]=!state.review[state.index];renderQuestion()}
+function confirmSubmit(){if(!state)return;const unanswered=state.answers.filter(x=>x===null).length;if(unanswered>0&&!confirm(`You have ${unanswered} unanswered question(s). Submit the test now?`))return;finishQuiz(false)}
+function finishQuiz(auto=false){
+ if(!state||state.ended)return;recordTime();state.ended=true;clearInterval(tick);
+ const attempted=state.answers.filter(x=>x!==null).length,correct=state.answers.reduce((s,a,i)=>s+(a===state.qs[i].a?1:0),0),wrong=attempted-correct,accuracy=attempted?Math.round(correct/attempted*100):0,duration=Math.round((state.totalSeconds-state.remaining));
+ const result={name:state.name,mode:state.mode,date:new Date().toISOString(),attempted,correct,wrong,total:state.qs.length,score:correct,accuracy,duration,avgTime:attempted?Math.round(state.times.reduce((a,b)=>a+b,0)/attempted):0,questions:state.qs,answers:state.answers,times:state.times};
+ const h=getHistory();h.unshift(result);saveHistory(h);updateDashboard();
+ document.getElementById('quizBackdrop').classList.add('hidden');
+ document.getElementById('resultTitle').textContent=auto?'Time is up!':'Test completed';
+ document.getElementById('resultSubtitle').textContent='Use this report to choose what to practise next.';
+ document.getElementById('resultContent').innerHTML=`<div style="margin-top:16px"><div class="muted">Your score</div><div class="result-score">${correct} <span style="font-size:18px;color:#667085">/ ${state.qs.length}</span></div><div class="muted">${accuracy}% accuracy · ${auto?'Submitted automatically when time ran out':'Submitted by you'}</div></div><div class="result-grid"><div class="result-mini"><strong>${attempted}</strong><span>Attempted</span></div><div class="result-mini"><strong>${wrong}</strong><span>Incorrect</span></div><div class="result-mini"><strong>${state.qs.length-attempted}</strong><span>Unanswered</span></div><div class="result-mini"><strong>${attempted?formatTime(Math.round(state.times.reduce((a,b)=>a+b,0)/attempted)):'—'}</strong><span>Avg time / attempted Q</span></div></div><p>${accuracy>=85?'Excellent accuracy. Now work on keeping this standard while gradually reducing your solving time.':accuracy>=60?'Good practice. Review mistakes before trying to increase your speed.':'Focus on understanding the methods first. Speed improves when the approach becomes familiar.'}</p><h3 style="font-size:16px;margin-top:22px">Answer review</h3><div class="review-list">${state.qs.map((q,i)=>`<div class="review-q"><h4>${i+1}. ${esc(q.q)}</h4><div class="${state.answers[i]===q.a?'correct':'wrong'}">${state.answers[i]===null?'Not attempted':state.answers[i]===q.a?'Correct':'Your answer: '+esc(q.o[state.answers[i]])}</div><div class="correct">Correct answer: ${'ABCD'[q.a]}. ${esc(q.o[q.a])}</div><div class="explain">${esc(q.e)} <span class="muted">Time: ${formatTime(state.times[i])}</span></div></div>`).join('')}</div>`;
+ document.getElementById('resultBackdrop').classList.remove('hidden');state=null;
+}
+function closeQuiz(){if(!state)return;if(confirm('Exit this test? Your current answers will not be saved.')){clearInterval(tick);state=null;document.getElementById('quizBackdrop').classList.add('hidden')}}
+function closeResults(){document.getElementById('resultBackdrop').classList.add('hidden')}
+function clearHistory(){if(confirm('Clear all saved practice history on this browser?')){localStorage.removeItem('examprep_history');updateDashboard()}}
+document.addEventListener('keydown',e=>{if(!state)return;if(['1','2','3','4'].includes(e.key))chooseAnswer(Number(e.key)-1);if(e.key==='ArrowRight')nextQuestion();if(e.key==='ArrowLeft')prevQuestion()});
+
+let adminEditIndex = null;
+function getCustomQuestions(){try{return JSON.parse(localStorage.getItem('examprep_custom_questions')||'[]')}catch(e){return []}}
+function openAdmin(){renderAdminQuestions();document.getElementById('adminBackdrop').classList.remove('hidden')}
+function closeAdmin(){document.getElementById('adminBackdrop').classList.add('hidden')}
+function resetAdminForm(){document.getElementById('adminForm').reset();adminEditIndex=null;document.querySelector('#adminForm button[type="submit"]').textContent='Save question'}
+function saveAdminQuestion(event){
+ event.preventDefault();
+ const item={subject:document.getElementById('adminSubject').value,q:document.getElementById('adminQuestion').value.trim(),o:['A','B','C','D'].map(k=>document.getElementById('admin'+k).value.trim()),a:Number(document.getElementById('adminCorrect').value),e:document.getElementById('adminExplanation').value.trim()};
+ if(!item.q||item.o.some(x=>!x)||!item.e){alert('Please complete the question, all four options, and the explanation.');return}
+ const saved=getCustomQuestions();
+ if(adminEditIndex!==null){saved[adminEditIndex]=item}else{saved.push(item)}
+ try{localStorage.setItem('examprep_custom_questions',JSON.stringify(saved))}catch(e){alert('Could not save in this browser. Storage may be disabled or full.');return}
+ // Refresh the in-memory question bank so new questions can be practised immediately.
+ Object.keys(BANK).forEach(k=>{BANK[k]=BANK[k].filter(q=>!q._localId)});
+ saved.forEach((q,i)=>{if(BANK[q.subject])BANK[q.subject].push({...q,_localId:i})});
+ resetAdminForm();renderAdminQuestions();alert('Question saved on this browser. It is not yet shared with other users or the public website.');
+}
+function renderAdminQuestions(){
+ const saved=getCustomQuestions();
+ document.getElementById('adminQuestionCount').textContent=`${saved.length} locally added question(s) · ${Object.values(BANK).reduce((s,a)=>s+a.length,0)} total available sample/custom questions`;
+ const host=document.getElementById('adminQuestionList');
+ if(!saved.length){host.innerHTML='<div class="empty">No custom questions added yet. Add one using the form above.</div>';return}
+ host.innerHTML=saved.map((q,i)=>`<div class="admin-question"><div><strong>${esc(q.subject)}</strong><div>${esc(q.q)}</div><div class="muted">Answer: ${'ABCD'[q.a]} · ${esc(q.o[q.a])}</div></div><div style="display:flex;gap:6px;flex-shrink:0"><button class="secondary" onclick="editAdminQuestion(${i})">Edit</button><button class="secondary" onclick="deleteAdminQuestion(${i})">Delete</button></div></div>`).join('');
+}
+function editAdminQuestion(i){
+ const q=getCustomQuestions()[i];if(!q)return;adminEditIndex=i;
+ document.getElementById('adminSubject').value=q.subject;document.getElementById('adminQuestion').value=q.q;
+ ['A','B','C','D'].forEach((k,j)=>document.getElementById('admin'+k).value=q.o[j]);
+ document.getElementById('adminCorrect').value=String(q.a);document.getElementById('adminExplanation').value=q.e;
+ document.querySelector('#adminForm button[type="submit"]').textContent='Update question';
+ document.getElementById('adminForm').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function deleteAdminQuestion(i){
+ if(!confirm('Delete this locally saved question?'))return;
+ const saved=getCustomQuestions();saved.splice(i,1);
+ try{localStorage.setItem('examprep_custom_questions',JSON.stringify(saved))}catch(e){}
+ Object.keys(BANK).forEach(k=>{BANK[k]=BANK[k].filter(q=>!q._localId)});
+ saved.forEach((q,j)=>{if(BANK[q.subject])BANK[q.subject].push({...q,_localId:j})});
+ renderAdminQuestions();
+}
+function exportQuestions(){
+ const blob=new Blob([JSON.stringify(getCustomQuestions(),null,2)],{type:'application/json'});
+ const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='examprep-custom-questions.json';a.click();URL.revokeObjectURL(url);
+}
+
+updateDashboard();
+</script>
+</body>
+</html>
